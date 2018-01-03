@@ -133,27 +133,30 @@ function togglePlayback(videoelem) {
 }
 
 function togglePlaybackOnAllViewPorts() {
-  for(var i=0; i<2; i++) {
-    for(var j=0; j<4; j++) {
+  for(var i=0; i<3; i++) {
+    for(var j=0; j<3; j++) {
       var videoelem = document.getElementById('vp'+i+j);
       togglePlayback(videoelem);
     }
   }
-  togglePlayback(document.getElementById('vpleft')); 
-  togglePlayback(document.getElementById('vpright')); 
+  //togglePlayback(document.getElementById('vpleft')); 
+  //togglePlayback(document.getElementById('vpright')); 
 }
 
 function initMultiView(config) {
   if (config) {
     shaka.polyfill.installAll();
-    initViewPortRow(0, 4, config);
-    initViewPortRow(1, 4, config);
+    initViewPortRow(0, 3, config);
+    initViewPortRow(1, 3, config);
+    initViewPortRow(2, 3, config);
+    /*
     if(config['row0'][0]) { 
       initViewPort(config['row0'][0], 'vpleft');
     }
     if(config['row1'][0]) { 
       initViewPort(config['row1'][0], 'vpright');
     }
+    */
   }
 }
 
@@ -171,14 +174,17 @@ function onKeyPress(ev) {
     } else {
       document.documentElement.requestFullscreen();
     }
-  } else if (ev.keyCode >= 49 && ev.keyCode <= 56) {
-    // 1-8 
+  } else if (ev.keyCode >= 49 && ev.keyCode <= 57) {
+    // 1-9 
     var idx = ev.keyCode - 49;
-    var row = 0;
-    if (idx > 3) {
-      idx -= 4;
+    var row = Math.floor(idx/3);
+    idx = idx % 3;
+ /*
+    if (idx > 2) {
+      idx -= 3;
       row = 1;
     }
+ */   
     videoelemid = 'vp' + row + idx;
     activateViewPort(videoelemid);
   }

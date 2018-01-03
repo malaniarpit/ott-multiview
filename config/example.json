@@ -1,7 +1,7 @@
 {
   "row0": [
     { "title": "Example 1",
-      "manifest": "http://content.jwplatform.com/manifests/vM7nH0Kl.m3u8",
+      "manifest": "https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8",
       "type": "hls"
     },
     { "title": "Example 2",
@@ -9,15 +9,15 @@
       "type": "hls"
     },
     { "title": "Example 3",
-      "manifest": "http://content.jwplatform.com/manifests/vM7nH0Kl.m3u8",
-      "type": "hls"
-    },
-    { "title": "Example 4",
-      "manifest": "http://content.jwplatform.com/manifests/vM7nH0Kl.m3u8",
+      "manifest": "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8",
       "type": "hls"
     }
  ],
   "row1": [
+    { "title": "Example 4",
+      "manifest": "https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd",
+      "type": "dash"
+    },
     { "title": "Example 5",
       "manifest": "http://www.bok.net/dash/tears_of_steel/cleartext/stream.mpd",
       "type": "dash"
@@ -25,12 +25,18 @@
     { "title": "Example 6",
       "manifest": "http://www.bok.net/dash/tears_of_steel/cleartext/stream.mpd",
       "type": "dash"
-    },
+    }
+  ],
+  "row2": [
     { "title": "Example 7",
+      "manifest": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+      "type": "hls"
+    },
+    { "title": "Example 8",
       "manifest": "http://www.bok.net/dash/tears_of_steel/cleartext/stream.mpd",
       "type": "dash"
     },
-    { "title": "Example 8",
+    { "title": "Example 9",
       "manifest": "http://www.bok.net/dash/tears_of_steel/cleartext/stream.mpd",
       "type": "dash"
     }
