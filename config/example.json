@@ -5,40 +5,70 @@
       "type": "hls"
     },
     { "title": "Example 2",
-      "manifest": "http://content.jwplatform.com/manifests/vM7nH0Kl.m3u8",
+      "manifest": "https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8",
       "type": "hls"
     },
     { "title": "Example 3",
-      "manifest": "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8",
+      "manifest": "https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8",
+      "type": "hls"
+    },
+    { "title": "Example 4",
+      "manifest": "https://bitmovin-a.akamaihd.net/content/playhouse-vr/m3u8s/105560.m3u8",
       "type": "hls"
     }
  ],
   "row1": [
-    { "title": "Example 4",
-      "manifest": "https://bitmovin-a.akamaihd.net/content/playhouse-vr/mpds/105560.mpd",
-      "type": "dash"
-    },
     { "title": "Example 5",
-      "manifest": "http://www.bok.net/dash/tears_of_steel/cleartext/stream.mpd",
+      "manifest": "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8",
       "type": "dash"
     },
     { "title": "Example 6",
+      "manifest": "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8",
+      "type": "dash"
+    },
+    { "title": "Example 7",
       "manifest": "http://www.bok.net/dash/tears_of_steel/cleartext/stream.mpd",
       "type": "dash"
+    },
+    { "title": "Example 8",
+      "manifest": "https://bitdash-a.akamaihd.net/content/MI201109210084_1/m3u8s/f08e80da-bf1d-4e3d-8899-f0f6155f6efa.m3u8",
+      "type": "hls"
     }
   ],
   "row2": [
-    { "title": "Example 7",
+    { "title": "Example 9",
       "manifest": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
       "type": "hls"
     },
-    { "title": "Example 8",
+    { "title": "Example 10",
       "manifest": "http://www.bok.net/dash/tears_of_steel/cleartext/stream.mpd",
       "type": "dash"
     },
-    { "title": "Example 9",
-      "manifest": "http://www.bok.net/dash/tears_of_steel/cleartext/stream.mpd",
-      "type": "dash"
+    { "title": "Example 11",
+      "manifest": "http://www.bok.net/",
+      "type": "hls"
+    },
+    { "title": "Example 12",
+      "manifest": "http://www.bok.net/",
+      "type": "hls"
+    }
+  ],
+  "row3": [
+    { "title": "Example 13",
+      "manifest": "https://bitdash-a.akamaihd.net/",
+      "type": "hls"
+    },
+    { "title": "Example 14",
+      "manifest": "https://bitdash-a.akamaihd.net/",
+      "type": "hls"
+    },
+    { "title": "Example 15",
+      "manifest": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+      "type": "hls"
+    },
+    { "title": "Example 16",
+      "manifest": "https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8",
+      "type": "hls"
     }
   ]
 }

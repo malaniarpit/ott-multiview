@@ -41,8 +41,10 @@ function initHlsPlayer(conf, videoelemid, donecb) {
   });
   hls.on(Hls.Events.LEVEL_SWITCH, function(event, data) {
     var level = hls.levels[data.level];
-    var metaelem = document.getElementById(hls.media.id + '-meta');
-    metaelem.innerHTML = (level.bitrate / 1000).toFixed(0) + 'kbps';
+    //var metaelem = document.getElementById(hls.media.id + '-meta');
+    //metaelem.innerHTML = (level.bitrate / 1000).toFixed(0) + 'kbps';
+    //var titleelem = document.getElementById(videoelemid+'-title');
+    //titleelem.innerHTML += ' (' + (level.bitrate / 1000).toFixed(0) + 'kbps' + ')';  
   });
 }
 
@@ -54,8 +56,10 @@ function initDashPlayer(conf, videoelemid, donecb) {
     if (shakaPlayers[ev.target.id]) {
       var p = shakaPlayers[ev.target.id];
       var stats = p.getStats();
-      var metaelem = document.getElementById(ev.target.id + '-meta');
-      metaelem.innerHTML = (stats.streamBandwidth / 1000).toFixed(0) + 'kbps';
+      //var metaelem = document.getElementById(ev.target.id + '-meta');
+      //metaelem.innerHTML = (stats.streamBandwidth / 1000).toFixed(0) + 'kbps';
+      //var titleelem = document.getElementById(videoelemid+'-title');
+      //titleelem.innerHTML += ' (' + (level.bitrate / 1000).toFixed(0) + 'kbps' + ')';  
     }
   });
 
@@ -88,13 +92,14 @@ function onPlaying(ev) {
 }
 
 function initViewPort(conf, videoelemid) {
+  var titleelem = document.getElementById(videoelemid+'-title');
+  titleelem.innerHTML = conf.title;
+
   initPlayer(conf, videoelemid, function(videoelem) {
     //console.log(videoelemid + " loaded!");
     videoelem.addEventListener("click", onVideoClick);
     videoelem.addEventListener("waiting", onWaiting);
     videoelem.addEventListener("playing", onPlaying);
-    var titleelem = document.getElementById(videoelemid+'-title');
-    titleelem.innerHTML = conf.title;
   });
 }
 
@@ -133,30 +138,21 @@ function togglePlayback(videoelem) {
 }
 
 function togglePlaybackOnAllViewPorts() {
-  for(var i=0; i<3; i++) {
-    for(var j=0; j<3; j++) {
+  for(var i=0; i<4; i++) {
+    for(var j=0; j<4; j++) {
       var videoelem = document.getElementById('vp'+i+j);
       togglePlayback(videoelem);
     }
-  }
-  //togglePlayback(document.getElementById('vpleft')); 
-  //togglePlayback(document.getElementById('vpright')); 
+  } 
 }
 
 function initMultiView(config) {
   if (config) {
     shaka.polyfill.installAll();
-    initViewPortRow(0, 3, config);
-    initViewPortRow(1, 3, config);
-    initViewPortRow(2, 3, config);
-    /*
-    if(config['row0'][0]) { 
-      initViewPort(config['row0'][0], 'vpleft');
-    }
-    if(config['row1'][0]) { 
-      initViewPort(config['row1'][0], 'vpright');
-    }
-    */
+    initViewPortRow(0, 4, config);
+    initViewPortRow(1, 4, config);
+    initViewPortRow(2, 4, config);
+    initViewPortRow(3, 4, config);
   }
 }
 
@@ -177,14 +173,15 @@ function onKeyPress(ev) {
   } else if (ev.keyCode >= 49 && ev.keyCode <= 57) {
     // 1-9 
     var idx = ev.keyCode - 49;
-    var row = Math.floor(idx/3);
-    idx = idx % 3;
- /*
-    if (idx > 2) {
-      idx -= 3;
-      row = 1;
-    }
- */   
+    var row = Math.floor(idx/4);
+    idx = idx % 4;
+    videoelemid = 'vp' + row + idx;
+    activateViewPort(videoelemid);
+  }else if (ev.keyCode >= 65 && ev.keyCode <= 71) {
+    // A-C 
+    var idx = ev.keyCode - 56;
+    var row = Math.floor(idx/4);
+    idx = idx % 4;
     videoelemid = 'vp' + row + idx;
     activateViewPort(videoelemid);
   }

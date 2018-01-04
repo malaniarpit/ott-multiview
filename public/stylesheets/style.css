@@ -37,7 +37,7 @@ th {
 
 .vp {
   border: 1px solid #fff;
-  min-height: 200px;
+  min-height: 50px;
   padding: 0px;
   text-align: center;
 }
@@ -47,20 +47,16 @@ th {
   background-color: #fff;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: auto 280px;
-  min-height: 280px;
+  background-size: auto 8px;
+  min-height: 8px;
   color: #000;
   text-align: center;
   padding: 2px;
 }
 
-.vp-large {
-  min-height: 280px;
-}
-
 video {
   width: 100%;
-  min-height: 200px;
+  min-height: 50px;
   border: 1px solid #777777;
 }
 
@@ -81,21 +77,14 @@ video {
 }
 
 .title {
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0px;
-  position: relative;
-  bottom: 10px;
-}
-
-.overlay {
-  position: relative;
-  width: 100%;
-  top: -20px;
+  position: absolute;
+  width: 30%;
+  bottom: 0px;
   background-color: #000;
   opacity: 0.8;
   z-index: 20;
+  font-size: 12px;
+  text-align: left;
 }
 
 .shortcut {
