@@ -43,8 +43,8 @@ function initHlsPlayer(conf, videoelemid, donecb) {
     var level = hls.levels[data.level];
     //var metaelem = document.getElementById(hls.media.id + '-meta');
     //metaelem.innerHTML = (level.bitrate / 1000).toFixed(0) + 'kbps';
-    //var titleelem = document.getElementById(videoelemid+'-title');
-    //titleelem.innerHTML += ' (' + (level.bitrate / 1000).toFixed(0) + 'kbps' + ')';  
+    var titleelem = document.getElementById(videoelemid+'-title');
+    titleelem.innerHTML += ' (' + (level.bitrate / 1000).toFixed(0) + 'kbps' + ')';  
   });
 }
 
