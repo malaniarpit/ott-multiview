@@ -44,9 +44,10 @@ See the [Running Express Apps in AWS Lambda](https://claudiajs.com/tutorials/ser
 # Usage
 
 When the Node express app is up and running you can direct your Chrome browser to:
-
-		http://localhost:3000/?config=example.json
-                http://localhost:3000/?config=s3://some-bucket/example.json
+```
+http://localhost:3000/?config=example.json
+http://localhost:3000/?config=s3://some-bucket/example.json
+```
 		
 where example.json is a configuration file placed in the directory config/ and can look like this:
 
